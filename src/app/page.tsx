@@ -1,8 +1,17 @@
+import {
+  Footer,
+  SimplePricingWithBackground,
+  SimpleWithBackground,
+  TitleWithImages,
+} from "@/sections";
+
 export default function Home() {
   return (
     <main>
-      {/* {importar aqui} */}
-      {/* {importar aqui} */}
+      <SimpleWithBackground />
+      <SimplePricingWithBackground />
+      <TitleWithImages />
+      <Footer />
     </main>
   );
 }

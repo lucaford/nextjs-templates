@@ -24,21 +24,22 @@ export function SimpleWithBackground() {
   const t = useTranslations("SimpleWithBackground");
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-r from-[#0c4a6e] to-[#0e7490]">
+    <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-white">
       <div className="container mx-auto px-4 md:px-6 text-center">
         <div className="space-y-4">
-          <h1 className="text-4xl font-bold tracking-tighter text-white sm:text-5xl md:text-6xl lg:text-7xl">
-            {t("title")}
+          <h1 className="text-4xl font-bold tracking-tighter text-[#30313D] sm:text-5xl md:text-6xl lg:text-7xl">
+            Expert Technical Consulting
           </h1>
-          <p className="mx-auto max-w-[700px] text-lg text-gray-200 md:text-xl">
-            {t("description")}
+          <p className="mx-auto max-w-[700px] text-lg text-[#30313D] md:text-xl">
+            Unlock your business potential with our premier SaaS solutions and
+            technical consulting services. Lets innovate together.
           </p>
           <div className="flex justify-center">
             <Link
-              className="inline-flex h-10 items-center justify-center rounded-md bg-[#0891b2] px-8 text-sm font-medium text-white shadow transition-colors hover:bg-[#0e7490] focus:outline-none focus:ring-2 focus:ring-[#0891b2] focus:ring-offset-2"
+              className="inline-flex h-10 items-center justify-center rounded-md bg-[#06AB78] px-8 text-sm font-medium text-white shadow transition-colors hover:bg-[#0e7490] focus:outline-none focus:ring-2 focus:ring-[#0891b2] focus:ring-offset-2"
               href="#"
             >
-              {t("buttonLabel")}
+              Contact US
             </Link>
           </div>
         </div>

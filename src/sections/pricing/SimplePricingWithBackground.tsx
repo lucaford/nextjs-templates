@@ -27,87 +27,117 @@ import { Button } from "@/components/ui/button";
 
 export function SimplePricingWithBackground() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-[#F8F9FD]">
       <div className="container mx-auto px-4 md:px-6 text-center">
         <div className="max-w-2xl mx-auto space-y-4">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-[#30313D]">
             Pricing
           </h2>
-          <p className="text-gray-500 md:text-xl dark:text-gray-400">
-            Choose the plan that fits your needs. No hidden fees, ever.
+          <p className="text-[#30313D]  md:text-xl ">
+            Start achieving your goals today.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-          <Card className="bg-white dark:bg-gray-950 p-6 rounded-lg shadow-md">
+          <Card className="bg-white p-6 rounded-lg shadow-md">
             <CardHeader>
-              <h3 className="text-2xl font-bold">Starter</h3>
-              <p className="text-4xl font-bold mt-2">$9</p>
-              <p className="text-gray-500 dark:text-gray-400 mt-1">per month</p>
+              <h3 className="text-[#30313D] text-2xl font-bold">Starter</h3>
+              <p className="text-[#30313D] text-4xl font-bold mt-2">$49</p>
+              <p className="text-[#30313D]  dark:text-gray-400 mt-1">
+                per month
+              </p>
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="flex items-center space-x-2">
                 <CheckIcon className="h-5 w-5 text-green-500" />
-                <p>1 user</p>
+                <p className="text-[#30313D]">Access to basic SaaS tools</p>
               </div>
               <div className="flex items-center space-x-2">
                 <CheckIcon className="h-5 w-5 text-green-500" />
-                <p>5 GB storage</p>
+                <p className="text-[#30313D]">Email support</p>
               </div>
               <div className="flex items-center space-x-2">
                 <CheckIcon className="h-5 w-5 text-green-500" />
-                <p>Basic analytics</p>
+                <p className="text-[#30313D]">Monthly software updates</p>
               </div>
             </CardContent>
             <CardFooter>
-              <Button className="w-full">Get Started</Button>
+              <Button variant="link" className="bg-[#06AB78] w-full">
+                Get Started
+              </Button>
             </CardFooter>
           </Card>
-          <Card className="bg-white dark:bg-gray-950 p-6 rounded-lg shadow-md">
+          <Card className="bg-white p-6 rounded-lg shadow-md">
             <CardHeader>
-              <h3 className="text-2xl font-bold">Pro</h3>
-              <p className="text-4xl font-bold mt-2">$19</p>
-              <p className="text-gray-500 dark:text-gray-400 mt-1">per month</p>
+              <h3 className="text-[#30313D] text-2xl font-bold">
+                Professional
+              </h3>
+              <p className="text-[#30313D] text-4xl font-bold mt-2">$99</p>
+              <p className="text-[#30313D]  dark:text-gray-400 mt-1">
+                per month
+              </p>
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="flex items-center space-x-2">
                 <CheckIcon className="h-5 w-5 text-green-500" />
-                <p>5 users</p>
+                <p className="text-[#30313D]">Full access to all SaaS tools</p>
               </div>
               <div className="flex items-center space-x-2">
                 <CheckIcon className="h-5 w-5 text-green-500" />
-                <p>50 GB storage</p>
+                <p className="text-[#30313D]">
+                  Priority email and chat support
+                </p>
               </div>
               <div className="flex items-center space-x-2">
                 <CheckIcon className="h-5 w-5 text-green-500" />
-                <p>Advanced analytics</p>
+                <p className="text-[#30313D]">
+                  Weekly software updates and new features
+                </p>
               </div>
             </CardContent>
             <CardFooter>
-              <Button className="w-full">Get Started</Button>
+              <Button
+                variant="link"
+                className="text-[#06AB78] bg-[#06AB78] w-full"
+              >
+                Get Started
+              </Button>
             </CardFooter>
           </Card>
-          <Card className="bg-white dark:bg-gray-950 p-6 rounded-lg shadow-md">
+          <Card className="bg-white p-6 rounded-lg shadow-md">
             <CardHeader>
-              <h3 className="text-2xl font-bold">Enterprise</h3>
-              <p className="text-4xl font-bold mt-2">$49</p>
-              <p className="text-gray-500 dark:text-gray-400 mt-1">per month</p>
+              <h3 className="text-[#30313D] text-2xl font-bold">Enterprise</h3>
+              <p className="text-[#30313D] text-4xl font-bold mt-2">$199</p>
+              <p className="text-[#30313D]  dark:text-gray-400 mt-1">
+                per month
+              </p>
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="flex items-center space-x-2">
                 <CheckIcon className="h-5 w-5 text-green-500" />
-                <p>Unlimited users</p>
+                <p className="text-[#30313D]">
+                  Access to advanced and customized SaaS tools
+                </p>
               </div>
               <div className="flex items-center space-x-2">
                 <CheckIcon className="h-5 w-5 text-green-500" />
-                <p>Unlimited storage</p>
+                <p className="text-[#30313D]">
+                  Dedicated 24/7 support via phone
+                </p>
               </div>
               <div className="flex items-center space-x-2">
                 <CheckIcon className="h-5 w-5 text-green-500" />
-                <p>Enterprise-grade analytics</p>
+                <p className="text-[#30313D]">
+                  Real-time updates and solutions
+                </p>
               </div>
             </CardContent>
             <CardFooter>
-              <Button className="w-full">Get Started</Button>
+              <Button
+                variant="link"
+                className="text-[#06AB78] bg-[#06AB78] w-full"
+              >
+                Get Started
+              </Button>
             </CardFooter>
           </Card>
         </div>
