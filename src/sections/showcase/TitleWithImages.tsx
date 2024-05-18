@@ -54,7 +54,7 @@ export function TitleWithImages() {
               alt="Product 3"
               className="aspect-[4/3] w-full object-cover transition-all duration-300 hover:scale-105"
               height="300"
-              src="placeholder.svg"
+              src="/placeholder.svg"
               width="400"
             />
           </div>
