@@ -19,32 +19,33 @@ To read more about using these font, please visit the Next.js documentation:
 **/
 export function DiscoverWithCheckPoints() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32">
-      <div className="container grid gap-8 px-4 md:px-6 lg:grid-cols-2 lg:gap-12">
+    <section className="bg-[#F8F9FD] w-full py-12 md:py-24 lg:py-32">
+      <div className="flex justify-around">
         <div className="space-y-8 xl:space-y-10">
           <div className="space-y-4 lg:space-y-6">
-            <div className="space-y-2">
+            <div className="space-y-4">
               <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl xl:text-4xl">
-                <span className="text-gray-900 dark:text-gray-50">
-                  Impulsa tu
-                </span>
-                {""}
+                <span className="text-[#30313D]">Put* el que no lea</span>{" "}
                 <span className="text-indigo-500 dark:text-indigo-400">
-                  negocio
+                  quién soy
                 </span>
               </h2>
-              <ul className="space-y-2 text-gray-500 dark:text-gray-400">
+              <ul className="space-y-4 text-gray-500 dark:text-gray-400">
                 <li className="flex items-center space-x-2">
                   <CircleCheckIcon className="h-5 w-5 text-indigo-500 dark:text-indigo-400" />
-                  <span>Aumenta tu visibilidad en línea</span>
+                  <span>Escribí lo de arriba solo para picar tu ego.</span>
                 </li>
                 <li className="flex items-center space-x-2">
                   <CircleCheckIcon className="h-5 w-5 text-indigo-500 dark:text-indigo-400" />
-                  <span>Mejora tu presencia digital</span>
+                  <span>
+                    No me gusta describirme porque no creo en las etiquetas.
+                  </span>
                 </li>
                 <li className="flex items-center space-x-2">
                   <CircleCheckIcon className="h-5 w-5 text-indigo-500 dark:text-indigo-400" />
-                  <span>Atrae más clientes potenciales</span>
+                  <span>
+                    Me llaman Diego pero yo me llamo Huracán a memesmooo.
+                  </span>
                 </li>
               </ul>
             </div>
@@ -53,10 +54,9 @@ export function DiscoverWithCheckPoints() {
         <div className="space-y-8 lg:space-y-10">
           <img
             alt="Image"
-            className="aspect-square w-full overflow-hidden rounded-xl object-cover"
-            height="650"
+            className="aspect-square overflow-hidden rounded-xl object-cover"
             src="/placeholder.svg"
-            width="650"
+            width="400"
           />
         </div>
       </div>

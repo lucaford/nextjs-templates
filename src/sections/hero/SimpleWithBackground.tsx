@@ -28,11 +28,11 @@ export function SimpleWithBackground() {
       <div className="container mx-auto px-4 md:px-6 text-center">
         <div className="space-y-4">
           <h1 className="text-4xl font-bold tracking-tighter text-[#30313D] sm:text-5xl md:text-6xl lg:text-7xl">
-            Expert Technical Consulting
+            TE VAS A MORIR
           </h1>
           <p className="mx-auto max-w-[700px] text-lg text-[#30313D] md:text-xl">
-            Unlock your business potential with our premier SaaS solutions and
-            technical consulting services. Lets innovate together.
+            Soy Pepito Master y no busco cambiar tu vida. Me dedico a crecer y
+            si quieres usar mi proceso para inspirarte, qué chingón.
           </p>
           <div className="flex justify-center">
             <Link
