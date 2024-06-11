@@ -1,0 +1,20 @@
+{
+  "SimpleWithBackground": {
+    "title": "Soy un titulo generado desde el proyecto",
+    "description": "Mmm yo tambien bebe",
+    "buttonLabel": "Presioname rey"
+  },
+  "LeadMailList": {
+    "title": "Emails pendejos",
+    "description": "Suscríbete y recibe pensamientos que escribo para mí",
+    "buttonLabel": "Suscribite"
+  },
+  "Footer": {
+    "title": "Crafting beautiful and functional products since 2010.",
+    "enterprise": "Acme Inc."
+  },
+  "CourseWithCards": {
+    "title": "Nuestros Cursos",
+    "description": "Explora nuestros cursos de alta calidad y encuentra el que mejor se adapte a tus necesidades."
+  }
+}

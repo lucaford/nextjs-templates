@@ -17,19 +17,20 @@ To read more about using these font, please visit the Next.js documentation:
 - App Directory: https://nextjs.org/docs/app/building-your-application/optimizing/fonts
 - Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
 **/
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 export function CourseWithCards() {
+  const t = useTranslations("CourseWithCards");
   return (
     <section className="text-[#30313D] w-full py-12 md:py-24 lg:py-32 bg-white">
       <div className="flex flex-col px-10 gap-8">
         <div className="text-center space-y-4">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            Nuestros Cursos
+            {t("title")}
           </h2>
           <p className="max-w-[700px] mx-auto text-[#30313D] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            Explora nuestros cursos de alta calidad y encuentra el que mejor se
-            adapte a tus necesidades.
+            {t("description")}
           </p>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">

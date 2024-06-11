@@ -26,18 +26,20 @@ To read more about using these font, please visit the Next.js documentation:
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export function LeadMailList() {
+  const t = useTranslations("LeadMailList");
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-[#F8F9FD]">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center space-y-6 text-center">
           <div className="space-y-3">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-[#30313D]">
-              Emails pendejos
+              {t("title")}
             </h1>
             <p className="max-w-[600px] text-[#30313D] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Suscríbete y recibe pensamientos que escribo para mí
+              {t("description")}
             </p>
           </div>
           <div className="w-full max-w-sm space-y-2">
@@ -51,7 +53,7 @@ export function LeadMailList() {
                 className="inline-flex h-10 items-center justify-center rounded-md bg-[#06AB78] px-8 text-sm font-medium text-white shadow transition-colors hover:bg-[#0e7490] focus:outline-none focus:ring-2 focus:ring-[#0891b2] focus:ring-offset-2"
                 href="#"
               >
-                Suscribite
+                {t("buttonLabel")}
               </Link>
             </form>
           </div>

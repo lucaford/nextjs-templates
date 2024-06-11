@@ -17,9 +17,12 @@ To read more about using these font, please visit the Next.js documentation:
 - App Directory: https://nextjs.org/docs/app/building-your-application/optimizing/fonts
 - Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
 **/
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 export function Footer() {
+  const t = useTranslations("Footer");
+
   return (
     <footer className="bg-white text-[#30313D] py-8">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
@@ -45,11 +48,9 @@ export function Footer() {
               strokeWidth="2"
             />
           </svg>
-          <span className="ml-2 text-lg font-bold">Acme Inc.</span>
+          <span className="ml-2 text-lg font-bold">{t("enterprise")}</span>
         </div>
-        <p className="text-sm mb-4 md:mb-0">
-          Crafting beautiful and functional products since 2010.
-        </p>
+        <p className="text-sm mb-4 md:mb-0">{t("title")}</p>
         <div className="flex space-x-4">
           <Link className="text-[#30313D] hover:text-gray-300" href="#">
             <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
