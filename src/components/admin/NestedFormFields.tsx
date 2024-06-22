@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface NestedFormFieldsProps {
   data: Record<string, any>;
@@ -7,7 +7,12 @@ interface NestedFormFieldsProps {
   level?: number;
 }
 
-const NestedFormFields: React.FC<NestedFormFieldsProps> = ({ data, onChange, path = '', level = 0 }) => {
+const NestedFormFields: React.FC<NestedFormFieldsProps> = ({
+  data,
+  onChange,
+  path = "",
+  level = 0,
+}) => {
   const handleChange = (key: string, value: any) => {
     const fullPath = path ? `${path}.${key}` : key;
     onChange(fullPath, value);
@@ -16,13 +21,23 @@ const NestedFormFields: React.FC<NestedFormFieldsProps> = ({ data, onChange, pat
   return (
     <div>
       {Object.entries(data).map(([key, value]) => (
-        <div key={key} className={`mb-4 ${level === 0 ? 'p-5 bg-gray-100 rounded-lg shadow-md mb-6' : ''}`}>
+        <div
+          key={key}
+          className={`mb-4 ${
+            level === 0 ? "p-5 bg-gray-100 rounded-lg shadow-md mb-6" : ""
+          }`}
+        >
           <label className="block text-gray-700 text-sm font-bold mb-2">
             {key}:
           </label>
-          {typeof value === 'object' && value !== null ? (
+          {typeof value === "object" && value !== null ? (
             <div className="ml-4">
-              <NestedFormFields data={value} onChange={onChange} path={path ? `${path}.${key}` : key} level={level + 1} />
+              <NestedFormFields
+                data={value}
+                onChange={onChange}
+                path={path ? `${path}.${key}` : key}
+                level={level + 1}
+              />
             </div>
           ) : (
             <input
