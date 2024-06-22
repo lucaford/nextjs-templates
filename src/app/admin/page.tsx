@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import NestedFormFields from "@/components/admin/NestedFormFields";
 import componentMap from "@/helpers/componentes-mapping";
+import ColorSetter from "@/components/admin/ColorSetter";
 
 const EditI18nPage = () => {
   const [translations, setTranslations] = useState<Record<string, any>>({});
@@ -74,6 +75,7 @@ const EditI18nPage = () => {
         <h1 className="text-4xl text-black font-bold mb-5 text-center">
           Edit configuration file
         </h1>
+        <ColorSetter/>
         <NestedFormFields data={translations} onChange={handleChange} />
         <div className="flex justify-center mt-5">
           <button
@@ -85,7 +87,7 @@ const EditI18nPage = () => {
           </button>
         </div>
       </div>
-      <div className="w-1/2 p-5">
+      <div className="w-1/2 px-5 shadow-md rounded-lg">
         {Object.keys(translations).map((key) => {
           const Component = componentMap[key];
           return Component ? (
