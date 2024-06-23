@@ -50,7 +50,7 @@ export function LeadMailList() {
                 type="email"
               />
               <Link
-                className="inline-flex h-10 items-center justify-center rounded-md bg-[#06AB78] px-8 text-sm font-medium text-white shadow transition-colors hover:bg-[#0e7490] focus:outline-none focus:ring-2 focus:ring-[#0891b2] focus:ring-offset-2"
+                className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-white shadow transition-colors hover:bg-[#0e7490] focus:outline-none focus:ring-2 focus:ring-[#0891b2] focus:ring-offset-2"
                 href="#"
               >
                 {t("buttonLabel")}
