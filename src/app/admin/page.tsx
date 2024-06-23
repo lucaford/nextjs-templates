@@ -4,9 +4,12 @@ import { useState, useEffect } from "react";
 import NestedFormFields from "@/components/admin/NestedFormFields";
 import componentMap from "@/helpers/componentes-mapping";
 import ColorSetter from "@/components/admin/ColorSetter";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 const EditI18nPage = () => {
   const [translations, setTranslations] = useState<Record<string, any>>({});
+  const [images, setImages] = useState<Record<string, any>>({});
+
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
 
@@ -21,9 +24,19 @@ const EditI18nPage = () => {
         console.error("Error fetching content:", error);
         setLoading(false);
       });
+
+    fetch("/api/img-urls")
+      .then((res) => res.json())
+      .then((data) => {
+        setImages(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching images:", error);
+      });
+
   }, []);
 
-  const handleChange = (path: string, value: any) => {
+  const handleTranslationsChange = (path: string, value: any) => {
     setTranslations((prevTranslations) => {
       const updatedTranslations = { ...prevTranslations };
       const keys = path.split(".");
@@ -38,6 +51,24 @@ const EditI18nPage = () => {
       });
 
       return updatedTranslations;
+    });
+  };
+
+  const handleImagesChange = (path: string, value: any) => {
+    setImages((prevImages) => {
+      const updatedImages = { ...prevImages };
+      const keys = path.split(".");
+      let current = updatedImages;
+
+      keys.forEach((key, index) => {
+        if (index === keys.length - 1) {
+          current[key] = value;
+        } else {
+          current = current[key];
+        }
+      });
+
+      return updatedImages;
     });
   };
 
@@ -59,6 +90,24 @@ const EditI18nPage = () => {
         console.error("Error saving content:", error);
         setSaving(false);
       });
+
+    fetch("/api/img-urls", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(images),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        window.location.reload();
+        setSaving(false);
+      })
+      .catch((error) => {
+        console.error("Error saving images:", error);
+        setSaving(false);
+      });
+
   };
 
   if (loading) {
@@ -75,12 +124,24 @@ const EditI18nPage = () => {
         <h1 className="text-4xl text-black font-bold mb-5 text-center">
           Edit configuration file
         </h1>
-        <ColorSetter/>
-        <NestedFormFields data={translations} onChange={handleChange} />
+        <ColorSetter />
+        <Tabs defaultValue="texts">
+          <TabsList>
+            <TabsTrigger value="texts">Texts</TabsTrigger>
+            <TabsTrigger value="images">Images</TabsTrigger>
+          </TabsList>
+          <TabsContent value="texts">
+            <NestedFormFields data={translations} onChange={handleTranslationsChange} />
+          </TabsContent>
+          <TabsContent value="images">
+            <NestedFormFields data={images} onChange={handleImagesChange} />
+          </TabsContent>
+        </Tabs>
+
         <div className="flex justify-center mt-5">
           <button
             onClick={handleSave}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            className="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             disabled={saving}
           >
             {saving ? "Saving..." : "Save"}
