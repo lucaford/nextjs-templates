@@ -17,11 +17,18 @@ To read more about using these font, please visit the Next.js documentation:
 - App Directory: https://nextjs.org/docs/app/building-your-application/optimizing/fonts
 - Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
 **/
+"use client";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { useContext, useEffect, useState } from "react";
+import { ImagesContext } from '@/app/ImagesContext';
 
 export function CourseWithCards() {
   const t = useTranslations("CourseWithCards");
+  
+  const images = useContext(ImagesContext);
+  if (!images) return null; // Handle the case where images might be undefined
+
   return (
     <section className="text-[#30313D] w-full py-12 md:py-24 lg:py-32 bg-white">
       <div className="flex flex-col px-10 gap-8">
@@ -39,7 +46,7 @@ export function CourseWithCards() {
               alt="Curso 1"
               className="rounded-t-lg w-full object-cover"
               height="200"
-              src="/placeholder.svg"
+              src={images?.CourseWithCards?.course1}
               style={{
                 aspectRatio: "400/200",
                 objectFit: "cover",
@@ -55,7 +62,7 @@ export function CourseWithCards() {
                 JavaScript.
               </p>
               <Link
-                className="inline-flex h-8 items-center justify-center rounded-md bg-[#06AB78] px-8 text-sm font-medium text-white shadow transition-colors hover:bg-[#0e7490] focus:outline-none focus:ring-2 focus:ring-[#0891b2] focus:ring-offset-2"
+                className="inline-flex h-8 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-white shadow transition-colors hover:bg-[#0e7490] focus:outline-none focus:ring-2 focus:ring-[#0891b2] focus:ring-offset-2"
                 href="#"
               >
                 Inscríbete
@@ -67,7 +74,7 @@ export function CourseWithCards() {
               alt="Curso 2"
               className="rounded-t-lg w-full object-cover"
               height="200"
-              src="/placeholder.svg"
+              src={images?.CourseWithCards?.course2}
               style={{
                 aspectRatio: "400/200",
                 objectFit: "cover",
@@ -83,7 +90,7 @@ export function CourseWithCards() {
                 Photoshop y Illustrator.
               </p>
               <Link
-                className="inline-flex h-8 items-center justify-center rounded-md bg-[#06AB78] px-8 text-sm font-medium text-white shadow transition-colors hover:bg-[#0e7490] focus:outline-none focus:ring-2 focus:ring-[#0891b2] focus:ring-offset-2"
+                className="inline-flex h-8 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-white shadow transition-colors hover:bg-[#0e7490] focus:outline-none focus:ring-2 focus:ring-[#0891b2] focus:ring-offset-2"
                 href="#"
               >
                 Inscríbete
@@ -95,7 +102,7 @@ export function CourseWithCards() {
               alt="Curso 3"
               className="rounded-t-lg w-full object-cover"
               height="200"
-              src="/placeholder.svg"
+              src={images?.CourseWithCards?.course3}
               style={{
                 aspectRatio: "400/200",
                 objectFit: "cover",
@@ -110,7 +117,7 @@ export function CourseWithCards() {
                 Aprende a promocionar tu negocio en línea y aumentar tus ventas.
               </p>
               <Link
-                className="inline-flex h-8 items-center justify-center rounded-md bg-[#06AB78] px-8 text-sm font-medium text-white shadow transition-colors hover:bg-[#0e7490] focus:outline-none focus:ring-2 focus:ring-[#0891b2] focus:ring-offset-2"
+                className="inline-flex h-8 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-white shadow transition-colors hover:bg-[#0e7490] focus:outline-none focus:ring-2 focus:ring-[#0891b2] focus:ring-offset-2"
                 href="#"
               >
                 Inscríbete
