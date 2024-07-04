@@ -35,7 +35,7 @@ export default function Home() {
 
       {/* ABOUT ME */}
       <section className="bg-[#fbf6ef] w-full py-12 md:py-24 lg:py-32">
-        <div className="container grid grid-cols-1 gap-8 px-4 md:grid-cols-2 md:gap-12 md:px-6">
+        <div className="container grid grid-cols-1 gap-8 px-4 md:grid-cols-2 md:gap-12 md:px-6 mx-auto">
           <div className="flex items-center justify-center">
             <img
               src="about_me_dra.jpg"
@@ -182,7 +182,7 @@ export default function Home() {
         </div>
       </section>
       <div className="w-full bg-[#fbf6ef] h-[1px]" />
-      <footer className="bg-[#ead7c3] text-[#30313D] py-8">
+      <footer className="bg-[#fbf6ef] text-[#30313D] py-8">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
           <div className="flex items-center mb-4 md:mb-0">
             <span className="text-[#30313D] ml-2 text-lg font-semibold">
