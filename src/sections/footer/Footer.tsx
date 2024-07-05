@@ -27,30 +27,11 @@ export function Footer() {
     <footer className="bg-[#fbf6ef] text-[#30313D] py-8">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
         <div className="flex items-center mb-4 md:mb-0">
-          <svg
-            className="h-8 w-auto text-[#30313D]"
-            fill="none"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-            />
-            <path
-              d="M12 6V12L16 14"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-            />
-          </svg>
-          <span className="ml-2 text-lg font-bold">{t("enterprise")}</span>
+          <span className="text-[#30313D] ml-2 text-lg font-semibold">
+            {t("enterprise")}
+          </span>
         </div>
-        <p className="text-sm mb-4 md:mb-0">{t("title")}</p>
+        <p className="text-sm mb-4 md:mb-0"></p>
         <div className="flex space-x-4">
           <Link className="text-[#30313D] hover:text-gray-300" href="#">
             <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
