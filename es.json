@@ -4,6 +4,11 @@
     "description": "Mmm yo tambien bebe",
     "buttonLabel": "hola"
   },
+  "HeroWithWallpaper": {
+    "title": "Optimiza tu Cuerpo y Mente",
+    "description": "Te invito a descubrir cómo pequeños cambios en tu vida pueden transformar tu bienestar integralmente.",
+    "cta": "Agendá"
+  },
   "LeadMailList": {
     "title": "Emails pendejos",
     "description": "Suscríbete y recibe pensamientos que escribo para mí",
