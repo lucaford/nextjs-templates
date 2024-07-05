@@ -6,7 +6,7 @@ const AboutMe = () => {
 
   return (
     <section className="bg-[#fbf6ef] w-full py-12 md:py-24 lg:py-32">
-      <div className="container grid grid-cols-1 gap-8 px-4 md:grid-cols-2 md:gap-12 md:px-6">
+      <div className="container grid grid-cols-1 gap-8 px-4 md:grid-cols-2 md:gap-12 md:px-6 mx-auto">
         <div className="flex items-center justify-center">
           <img
             src="about_me_dra.jpg"
