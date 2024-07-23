@@ -31,13 +31,21 @@ export default function Home() {
     fetchColors();
   }, []);
 
-  return (
-    <main>
-      <HeroWithWallpaper />
-      <AboutMe />
-      <CoursesWithLongCards />
-      <ProductsWithHoverImages />
-      <Footer />
-    </main>
-  );
+  const getTemplate = () => {
+    if (process.env.NEXT_PUBLIC_TEMPLATE_NAME === "SimpleAboutMeWithProducts") {
+      return (
+        <main>
+          <HeroWithWallpaper />
+          <AboutMe />
+          <CoursesWithLongCards />
+          <ProductsWithHoverImages />
+          <Footer />
+        </main>
+      );
+    }
+
+    return <div>template doesn't exist</div>;
+  };
+
+  return getTemplate();
 }
