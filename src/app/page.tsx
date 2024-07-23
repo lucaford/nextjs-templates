@@ -1,10 +1,10 @@
 "use client";
 import {
-  CourseWithCards,
-  DiscoverWithCheckPoints,
+  AboutMe,
+  CoursesWithLongCards,
   Footer,
-  LeadMailList,
-  SimpleWithBackground,
+  HeroWithWallpaper,
+  ProductsWithHoverImages,
 } from "@/sections";
 import axios from "axios";
 import { useEffect } from "react";
@@ -33,10 +33,10 @@ export default function Home() {
 
   return (
     <main>
-      <SimpleWithBackground />
-      <DiscoverWithCheckPoints />
-      <CourseWithCards />
-      <LeadMailList />
+      <HeroWithWallpaper />
+      <AboutMe />
+      <CoursesWithLongCards />
+      <ProductsWithHoverImages />
       <Footer />
     </main>
   );
