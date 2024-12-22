@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
-const CoursesWithLongCards = () => {
+const CoursesWithLongCards = ({ ctas }: { ctas: any }) => {
   const t = useTranslations("CoursesWithLongCards");
 
   return (
@@ -21,9 +22,15 @@ const CoursesWithLongCards = () => {
             <p className="text-[#393e41] mb-6 flex-grow">
               {t("firstCardDescription")}
             </p>
-            <button className="px-6 py-2 rounded-md text-sm font-medium bg-[#ead7c3] text-gray-800">
+            <Link
+              href={
+                (ctas?.CoursesWithLongCards && ctas?.CoursesWithLongCards[0]) ||
+                ""
+              }
+              className="px-6 py-2 rounded-md text-sm font-medium bg-[#ead7c3] text-gray-800"
+            >
               {t("cta")}
-            </button>
+            </Link>
           </div>
 
           {/* Second Card */}
@@ -34,9 +41,15 @@ const CoursesWithLongCards = () => {
             <p className="text-[#393e41] mb-6 flex-grow">
               {t("secondCardDescription")}
             </p>
-            <button className="px-6 py-2 rounded-md text-sm font-medium bg-[#fbf6ef] text-[#393e41]">
+            <Link
+              href={
+                (ctas?.CoursesWithLongCards && ctas?.CoursesWithLongCards[1]) ||
+                ""
+              }
+              className="px-6 py-2 rounded-md text-sm font-medium bg-[#fbf6ef] text-[#393e41]"
+            >
               {t("cta")}
-            </button>
+            </Link>
           </div>
 
           {/* Third Card */}
@@ -47,9 +60,15 @@ const CoursesWithLongCards = () => {
             <p className="text-[#393e41] mb-6 flex-grow">
               {t("thirdCardDescription")}
             </p>
-            <button className="px-6 py-2 rounded-md text-sm font-medium bg-[#ead7c3] text-gray-800">
+            <Link
+              href={
+                (ctas?.CoursesWithLongCards && ctas?.CoursesWithLongCards[2]) ||
+                ""
+              }
+              className="px-6 py-2 rounded-md text-sm font-medium bg-[#ead7c3] text-gray-800"
+            >
               {t("cta")}
-            </button>
+            </Link>
           </div>
         </div>
       </div>

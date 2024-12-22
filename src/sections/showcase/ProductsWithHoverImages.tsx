@@ -1,6 +1,13 @@
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
-const ProductsWithHoverImages = () => {
+const ProductsWithHoverImages = ({
+  images,
+  ctas,
+}: {
+  images: any;
+  ctas: any;
+}) => {
   const t = useTranslations("ProductsWithHoverImages");
 
   return (
@@ -10,9 +17,20 @@ const ProductsWithHoverImages = () => {
           {t("title")}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="relative overflow-hidden group rounded-lg shadow-md">
+          <Link
+            href={
+              (ctas?.ProductsWithHoverImages &&
+                ctas?.ProductsWithHoverImages[0]) ||
+              ""
+            }
+            className="relative overflow-hidden group rounded-lg shadow-md"
+          >
             <img
-              src="product_1.webp"
+              src={
+                (images?.ProductsWithHoverImages &&
+                  images?.ProductsWithHoverImages[0]) ||
+                "wallpaper.jpg"
+              }
               alt="image 1"
               className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
             />
@@ -21,10 +39,21 @@ const ProductsWithHoverImages = () => {
                 {t("firstCard")}
               </h3>
             </div>
-          </div>
-          <div className="relative overflow-hidden group rounded-lg shadow-md">
+          </Link>
+          <Link
+            href={
+              (ctas?.ProductsWithHoverImages &&
+                ctas?.ProductsWithHoverImages[1]) ||
+              ""
+            }
+            className="relative overflow-hidden group rounded-lg shadow-md"
+          >
             <img
-              src="product_2.webp"
+              src={
+                (images?.ProductsWithHoverImages &&
+                  images?.ProductsWithHoverImages[1]) ||
+                "wallpaper.jpg"
+              }
               alt="image 2"
               className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
             />
@@ -33,10 +62,21 @@ const ProductsWithHoverImages = () => {
                 {t("secondCard")}
               </h3>
             </div>
-          </div>
-          <div className="relative overflow-hidden group rounded-lg shadow-md">
+          </Link>
+          <Link
+            href={
+              (ctas?.ProductsWithHoverImages &&
+                ctas?.ProductsWithHoverImages[2]) ||
+              ""
+            }
+            className="relative overflow-hidden group rounded-lg shadow-md"
+          >
             <img
-              src="product_3.png"
+              src={
+                (images?.ProductsWithHoverImages &&
+                  images?.ProductsWithHoverImages[2]) ||
+                "wallpaper.jpg"
+              }
               alt="image 3"
               className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
             />
@@ -45,7 +85,7 @@ const ProductsWithHoverImages = () => {
                 {t("thirdCard")}
               </h3>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </section>

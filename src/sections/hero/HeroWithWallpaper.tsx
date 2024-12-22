@@ -1,14 +1,17 @@
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
-const HeroWithWallpaper = () => {
+const HeroWithWallpaper = ({ images, ctas }: { images: any; ctas: any }) => {
   const t = useTranslations("HeroWithWallpaper");
 
   return (
     <section className="relative h-screen w-full">
       <div className="absolute inset-0 overflow-hidden">
         <img
-          src="wallpaper.jpg"
+          src={
+            (images?.HeroWithWallpaper && images?.HeroWithWallpaper[0]) ||
+            "wallpaper.jpg"
+          }
           alt="Background Image"
           className="h-full w-full object-cover"
           width={1920}
@@ -23,7 +26,7 @@ const HeroWithWallpaper = () => {
           {t("description")}
         </p>
         <Link
-          href="#"
+          href={(ctas?.HeroWithWallpaper && ctas?.HeroWithWallpaper[0]) || ""}
           className="mt-8 px-8 py-3 bg-[#ead7c3] text-[#393e41] rounded-xl shadow transition duration-300"
           prefetch={false}
         >

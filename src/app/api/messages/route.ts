@@ -13,11 +13,11 @@ if (!clientPromise) {
 export async function GET() {
   try {
     const client = await clientPromise;
-    const db = client.db("landing-generator");
+    const db = client.db("landings");
     const pagesCollection = db.collection("pages");
 
     const page = await pagesCollection.findOne({
-      projectName: process.env.PROJECT_NAME,
+      projectName: process.env.NEXT_PUBLIC_PROJECT_NAME,
     });
 
     return NextResponse.json(page.texts, { status: 200 });

@@ -1,5 +1,4 @@
 import {
-  CourseWithCards,
   DiscoverWithBulletPoints,
   DiscoverWithCheckPoints,
   Footer,
@@ -15,7 +14,6 @@ import {
 const componentMap: Record<string, React.FC<any>> = {
   Footer,
   FooterMinimalist,
-  CourseWithCards,
   DiscoverWithBulletPoints,
   DiscoverWithCheckPoints,
   SimpleWithBackground,

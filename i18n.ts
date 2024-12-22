@@ -10,7 +10,13 @@ const getLocales = async () => {
 
 export default getRequestConfig(async () => {
   const locale = "es";
-  const messages = await getLocales();
+
+  let messages = {};
+
+  if (typeof window !== "undefined") {
+    messages = await getLocales();
+  }
+
   return {
     locale,
     messages,

@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
-const AboutMe = () => {
+const AboutMe = ({ images, ctas }: { images: any; ctas: any }) => {
   const t = useTranslations("AboutMe");
 
   return (
@@ -9,7 +9,7 @@ const AboutMe = () => {
       <div className="container grid grid-cols-1 gap-8 px-4 md:grid-cols-2 md:gap-12 md:px-6 mx-auto">
         <div className="flex items-center justify-center">
           <img
-            src="about_me_dra.jpg"
+            src={(images?.AboutMe && images?.AboutMe[0]) || "wallpaper.jpg"}
             width={400}
             height={400}
             alt="Profile Picture"
@@ -27,7 +27,7 @@ const AboutMe = () => {
           </div>
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
             <Link
-              href="#"
+              href={(ctas?.AboutMe && ctas?.AboutMe[0]) || ""}
               className="inline-flex h-9 text-[#393e41] items-center justify-center rounded-md border border-input bg-[#ead7c3] px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
               prefetch={false}
             >

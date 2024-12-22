@@ -21,7 +21,6 @@ export async function GET() {
   let clientInstance: MongoClient;
 
   try {
-    // Intentamos obtener una conexión con la base de datos
     clientInstance = await clientPromise;
   } catch (connectionError) {
     console.error("Database connection error:", connectionError);
@@ -37,14 +36,14 @@ export async function GET() {
 
     const page = await pagesCollection.findOne({ projectName });
 
-    if (!page || !page.colors) {
+    if (!page || !page.images) {
       return NextResponse.json(
-        { error: "No colors found for the specified project." },
+        { error: "No images found for the specified project." },
         { status: 404 }
       );
     }
 
-    return NextResponse.json(page.colors, { status: 200 });
+    return NextResponse.json(page.images, { status: 200 });
   } catch (queryError) {
     console.error("Error querying the database:", queryError);
     return NextResponse.json(

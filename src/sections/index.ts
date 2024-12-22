@@ -1,7 +1,6 @@
 export { Footer } from "./footer/Footer";
 export { FooterMinimalist } from "./footer/FooterMinimalist";
 
-export { CourseWithCards } from "./courses/CourseWithCards";
 export { default as CoursesWithLongCards } from "./courses/CoursesWithLongCards";
 
 export { DiscoverWithBulletPoints } from "./discover/DiscoverWithBulletPoints";
