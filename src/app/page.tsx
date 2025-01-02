@@ -9,66 +9,74 @@ import {
 import ProductWithAnimations from "@/templates/ProductWithAnimations";
 import axios from "axios";
 import { NextIntlClientProvider } from "next-intl";
-import { useEffect, useState } from "react";
+import useSWR from "swr";
+import { SWRConfig } from "swr";
+
+const fetcher = (url: string) => axios.get(url).then((res) => res.data);
 
 export default function Home() {
-  const [messages, setMessages] = useState();
-  const [images, setImages] = useState();
-  const [ctas, setCtas] = useState();
-  useEffect(() => {
-    const fetchColors = async () => {
-      try {
-        const { data: colors } = await axios.get("/api/colors");
+  return (
+    <SWRConfig
+      value={{
+        fetcher,
+        provider: () => new Map(),
+        isOnline() {
+          /* Customize the network state detector */
+          return true;
+        },
+        isVisible() {
+          /* Customize the visibility state detector */
+          return true;
+        },
+        initFocus(callback) {
+          let appState = "active";
+          // Call callback() when the page focus changes
+          return () => {
+            // Cleanup...
+          };
+        },
+        initReconnect(callback) {
+          // Call callback() when the browser regains connection
+          return () => {
+            // Cleanup...
+          };
+        },
+      }}
+    >
+      <HomeContent />
+    </SWRConfig>
+  );
+}
 
-        document.documentElement.style.setProperty(
-          "--color-primary",
-          colors.primary
-        );
-        document.documentElement.style.setProperty(
-          "--color-secondary",
-          colors.secondary
-        );
-      } catch (error) {
-        console.error("Error fetching colors:", error);
-      }
-    };
+function HomeContent() {
+  const { data: colors, error: colorsError } = useSWR("/api/colors");
+  const { data: messages, error: messagesError } = useSWR("/api/messages");
+  const { data: images, error: imagesError } = useSWR("/api/images");
+  const { data: ctas, error: ctasError } = useSWR("/api/ctas");
 
-    const fetchMessages = async () => {
-      try {
-        const { data: texts } = await axios.get("/api/messages");
+  // Set colors when they're loaded
+  // if (colors) {
+  //   document.documentElement.style.setProperty(
+  //     "--color-primary",
+  //     colors.primary
+  //   );
+  //   document.documentElement.style.setProperty(
+  //     "--color-secondary",
+  //     colors.secondary
+  //   );
+  // }
 
-        setMessages(texts);
-      } catch (error) {
-        console.error("Error fetching messages:", error);
-      }
-    };
+  // Check if all data is loaded
+  const isLoading = !colors || !messages || !images || !ctas;
+  const hasError = colorsError || messagesError || imagesError || ctasError;
 
-    const fetchImages = async () => {
-      try {
-        const { data: images } = await axios.get("/api/images");
-
-        setImages(images);
-      } catch (error) {
-        console.error("Error fetching images:", error);
-      }
-    };
-
-    const fetchCtas = async () => {
-      try {
-        const { data: ctas } = await axios.get("/api/ctas");
-
-        setCtas(ctas);
-      } catch (error) {
-        console.error("Error fetching ctas:", error);
-      }
-    };
-
-    // implementar SWR para todos los endpoints
-    fetchColors();
-    fetchMessages();
-    fetchImages();
-    fetchCtas();
-  }, []);
+  if (isLoading)
+    return (
+      <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50">
+        <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-primary"></div>
+      </div>
+    );
+  if (hasError) return <div>Error loading data</div>;
 
   const getTemplate = () => {
     if (process.env.NEXT_PUBLIC_TEMPLATE_NAME === "SimpleAboutMeWithProducts") {
@@ -89,7 +97,11 @@ export default function Home() {
       return (
         <main>
           <NextIntlClientProvider messages={messages} locale="es">
-            <ProductWithAnimations />
+            <ProductWithAnimations
+              images={images}
+              ctas={ctas}
+              colors={colors}
+            />
           </NextIntlClientProvider>
         </main>
       );

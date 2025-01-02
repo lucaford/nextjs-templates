@@ -10,6 +10,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "images.unsplash.com",
       },
+      {
+        protocol: "https",
+        hostname: "bjj-life-bucket.s3.sa-east-1.amazonaws.com",
+      },
     ],
   },
   experimental: {
